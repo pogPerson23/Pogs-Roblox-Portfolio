@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pog's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navBar">
+    <ul>
+      <li><button onclick="smoothScroll.goToSection(0)">Home</button></li>
+      <li><button onclick="smoothScroll.goToSection(1)">About Me</button></li>
+      <li><button onclick="smoothScroll.goToSection(2)">Past Works</button></li>
+      <li><button onclick="smoothScroll.goToSection(3)">Reviews</button></li>
+      <li><button onclick="smoothScroll.goToSection(4)">Contact Me</button></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="scrollSection">
+    <h1>Hi, I'm Pog</h1>
+    <div class="subtitle">Scripter and Roblox Developer</div>
+    <button class="cta-button" onclick="smoothScroll.goToSection(1)">Get to know me</button>
+  </section>
+
+  <section id="about" class="scrollSection">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>Hi, I'm Pog, a Roblox Scripter and developer, who loves creating new, immersive and innovative systems, fun game mechanics, and interactive game experiences which keep players engaged.</p>
+      <p>When I'm not coding, I like to learn new things, play video games and hang out with my friends!</p>
+    </div>
+    <div class="skills-container">
+      <div class="skills-section">
+        <h3>Roblox Skills</h3>
+        <div class="skills">
+          <span class="skill-tag roblox">Lua Scripting</span>
+          <span class="skill-tag roblox">Roblox Studio</span>
+          <span class="skill-tag roblox">Game Design</span>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h3>Other Skills</h3>
+        <div class="skills">
+          <span class="skill-tag other">HTML/CSS</span>
+          <span class="skill-tag other">JavaScript</span>
+          <span class="skill-tag other">Python</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="scrollSection">
+    <h2>Past Works</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>FPS Weapon System</h3>
+        <p>A fully functioning FPS weapon system with reloading, shooting, and spread components to make the gun work perfectly. </p>
+        <p>Code: <a href="https://github.com/pogPerson23/pastworks/blob/main/weaponHandler.luau">FPS Weapon Code</a></p>
+        <p>Game: <a href="https://www.roblox.com/games/100932356204934/shooting-game">FPS Weapon Game</a></p>
+        <div class="project-tech">
+          <span class="tech-tag">Luau</span>
+          <span class="tech-tag">CFrame Math</span>
+          <span class="tech-tag">Remote Events</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Combat System</h3>
+        <p>A responsive melee combat system with hit detection, animations, and blocking functions for dynamic battles.</p>
+        <p>Code: <a href="https://github.com/pogPerson23/pastworks/blob/main/combatScript.luau">Combat System Code</a></p>
+        <p>Game: <a href="https://www.roblox.com/games/75778224081123/epic-combat-system">Combat System Game</a></p>
+        <div class="project-tech">
+          <span class="tech-tag">Luau</span>
+          <span class="tech-tag">Animations</span>
+          <span class="tech-tag">Remote Events</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Security Tablet</h3>
+        <p>Tablet with full animations for access security cameras. Fully modular and easy to add new apps and functionalities</p>
+        <p>Code: <a href="https://github.com/pogPerson23/pastworks/blob/main/tablet.luau">Security Tablet Code</a></p>
+        <p>Game: <a href="https://www.roblox.com/games/119198677923728/tablet-security-system-game">Security Tablet Game</a></p>
+        <div class="project-tech">
+          <span class="tech-tag">Luau</span>
+          <span class="tech-tag">IKControls</span>
+          <span class="tech-tag">Camera Manipulation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="scrollSection">
+    <h2>Client Reviews</h2>
+    <div class="reviews-content">
+      <div class="review-card">
+        <div class="review-text">
+          <p>"Thanks for doing all the things with the shop ui and scripting and the bugs fixing in a short time."</p>
+        </div>
+        <div class="review-details">
+          <div class="review-project">Shop UI and Bug Fixes</div>
+          <div class="review-client">- sxby</div>
+        </div>
+        <div class="review-stars">
+          ⭐⭐⭐⭐⭐
+        </div>
+      </div>
+      <div class="review-placeholder">
+        <p>More reviews coming soon...</p>
+        <small>Last updated July 2025</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="scrollSection">
+    <h2>Contact</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <p>Ready to collaborate on your next Roblox project? I'm always excited to work on innovative games and bring creative visions to life.</p>
+        <p>Let's build something amazing together!</p>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.discordapp.com/users/853279403751768104" class="contact-link">Discord</a>
+        <a href="https://www.roblox.com/users/3727072680/profile" class="contact-link">Roblox Profile</a>
+        <a href="https://github.com/pogPerson23" class="contact-link">Github</a>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
