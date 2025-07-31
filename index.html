@@ -91,21 +91,51 @@
   <section id="reviews" class="scrollSection">
     <h2>Client Reviews</h2>
     <div class="reviews-content">
-      <div class="review-card">
-        <div class="review-text">
-          <p>"Thanks for doing all the things with the shop ui and scripting and the bugs fixing in a short time."</p>
+      <div class="review-slider">
+        <button class="slider-arrow left-arrow" onclick="reviewSlider.previous()">&#8249;</button>
+
+        <div class="review-container">
+          <div class="review-card active" data-review="0">
+            <div class="review-text">
+              <p>"Thanks for doing all the things with the shop ui and scripting and the bugs fixing in a short time."</p>
+            </div>
+            <div class="review-details">
+              <div class="review-project">Shop UI and Bug Fixes</div>
+              <div class="review-client">- sxby</div>
+            </div>
+            <div class="review-stars">
+              ⭐⭐⭐⭐⭐
+            </div>
+          </div>
+
+          <div class="review-card" data-review="1">
+            <div class="review-text">
+              <p>"Done a good job with scripting and making an admin system."</p>
+            </div>
+            <div class="review-details">
+              <div class="review-project">Leaderstats and full admin system</div>
+              <div class="review-client">- Gamertag456789</div>
+            </div>
+            <div class="review-stars">
+              ⭐⭐⭐⭐⭐
+            </div>
+          </div>
+
+          <div class="review-card" data-review="2">
+            <div class="review-placeholder">
+              <p>More reviews coming soon...</p>
+              <small>Last updated July 2025</small>
+            </div>
+          </div>
         </div>
-        <div class="review-details">
-          <div class="review-project">Shop UI and Bug Fixes</div>
-          <div class="review-client">- sxby</div>
-        </div>
-        <div class="review-stars">
-          ⭐⭐⭐⭐⭐
-        </div>
+
+        <button class="slider-arrow right-arrow" onclick="reviewSlider.next()">&#8250;</button>
       </div>
-      <div class="review-placeholder">
-        <p>More reviews coming soon...</p>
-        <small>Last updated July 2025</small>
+
+      <div class="review-indicators">
+        <span class="indicator active" onclick="reviewSlider.goTo(0)"></span>
+        <span class="indicator" onclick="reviewSlider.goTo(1)"></span>
+        <span class="indicator" onclick="reviewSlider.goTo(2)"></span>
       </div>
     </div>
   </section>

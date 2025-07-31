@@ -10,7 +10,6 @@ body {
   background: linear-gradient(135deg, #000087, #4b0082);
 }
 
-/* Navigation */
 .navBar {
   position: fixed;
   top: 0;
@@ -65,7 +64,6 @@ body {
   box-shadow: 0 0 20px rgba(85, 164, 192, 0.4);
 }
 
-/* Sections */
 .scrollSection {
   height: 100vh;
   display: flex;
@@ -77,7 +75,6 @@ body {
   padding: 0 40px;
 }
 
-/* Home Section */
 #home {
   background: linear-gradient(135deg, #000087, #4b0082, #465fc2);
   position: relative;
@@ -138,7 +135,6 @@ body {
   box-shadow: 0 20px 40px rgba(85, 164, 192, 0.5);
 }
 
-/* About Section */
 #about {
   background: linear-gradient(135deg, #4b0082, #465fc2, #55a4c0);
   color: white;
@@ -216,7 +212,6 @@ body {
   box-shadow: 0 5px 15px rgba(75, 0, 130, 0.3);
 }
 
-/* Projects Section */
 #projects {
   background: linear-gradient(135deg, #465fc2, #55a4c0, #b5e2fa);
   color: #000087;
@@ -278,7 +273,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Reviews Section */
 #reviews {
   background: linear-gradient(135deg, #b5e2fa, #55a4c0, #465fc2);
   color: #000087;
@@ -296,16 +290,73 @@ body {
   width: 100%;
 }
 
+.review-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.slider-arrow {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 0, 135, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  color: #000087;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  z-index: 10;
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #000087;
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 135, 0.3);
+}
+
+.slider-arrow:active {
+  transform: scale(0.95);
+}
+
+.review-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  overflow: hidden;
+}
+
 .review-card {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   padding: 40px;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  position: relative;
+  transition: all 0.5s ease;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100px);
   overflow: hidden;
+}
+
+.review-card.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.review-card.prev {
+  opacity: 0;
+  transform: translateX(-100px);
 }
 
 .review-card:before {
@@ -316,12 +367,6 @@ body {
   font-size: 8rem;
   color: rgba(0, 0, 135, 0.1);
   font-family: serif;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 20px 40px rgba(0, 0, 135, 0.2);
 }
 
 .review-text {
@@ -362,12 +407,17 @@ body {
 }
 
 .review-placeholder {
-  background: rgba(255, 255, 255, 0.1);
+  background: none;
   border: 2px dashed rgba(0, 0, 135, 0.3);
   border-radius: 15px;
   padding: 40px;
   text-align: center;
   color: #465fc2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .review-placeholder p {
@@ -379,7 +429,31 @@ body {
   opacity: 0.7;
 }
 
-/* Contact Section */
+.review-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 0, 135, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #000087;
+  transform: scale(1.3);
+}
+
+.indicator:hover {
+  background: #465fc2;
+  transform: scale(1.1);
+}
+
 #contact {
   background: linear-gradient(135deg, #55a4c0, #b5e2fa, #ffffff);
   color: #000087;
@@ -425,7 +499,43 @@ body {
   box-shadow: 0 15px 35px rgba(75, 0, 130, 0.4);
 }
 
-/* Responsive Design */
+a {
+  color: #b5e2fa;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(181, 226, 250, 0.6);
+}
+
+a:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #55a4c0, #b5e2fa);
+  transition: width 0.3s ease;
+}
+
+a:hover:before {
+  width: 100%;
+}
+
+a:visited {
+  color: #465fc2;
+}
+
+a:active {
+  color: #55a4c0;
+  transform: scale(0.98);
+}
+
 @media (max-width: 768px) {
   #home h1 {
     font-size: 2.5rem;
@@ -461,42 +571,23 @@ body {
     flex-direction: column;
     gap: 30px;
   }
-}
 
-/* Links */
-link {
-  color: #b5e2fa;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  font-weight: 500;
-}
+  .slider-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin: 0 10px;
+  }
 
-link:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(181, 226, 250, 0.6);
-}
+  .review-container {
+    height: 400px;
+  }
 
-link:before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #55a4c0, #b5e2fa);
-  transition: width 0.3s ease;
-}
+  .review-card {
+    padding: 30px 20px;
+  }
 
-link:hover:before {
-  width: 100%;
-}
-
-link:visited {
-  color: #465fc2;
-}
-
-link:active {
-  color: #55a4c0;
-  transform: scale(0.98);
+  .review-text p {
+    font-size: 1.1rem;
+  }
 }
